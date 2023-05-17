@@ -7,14 +7,29 @@
 // in the signatures for now. If anything, this is a good way to peek ahead
 // to future exercises!)
 
-// I AM NOT DONE
-
 fn main() {
     let original_price = 51;
     println!("Your sale price is {}", sale_price(original_price));
+    let another_price = 501;
+    println!("New sale price gets {}", new_sale_price(another_price)); 
 }
 
-fn sale_price(price: i32) -> {
+fn new_sale_price(original_price: u32) -> u32 {
+    if is_odd(original_price) {
+        println!("odd");
+        original_price - original_price + 1
+    } else {
+        println!("even");
+        original_price - original_price
+    }
+}
+
+fn is_odd(price: u32) -> bool {
+    return price % 2 != 0
+}
+
+
+fn sale_price(price: i32) -> i32 {
     if is_even(price) {
         price - 10
     } else {
